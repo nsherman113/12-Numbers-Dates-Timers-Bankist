@@ -129,4 +129,81 @@ console.log(PI);
 
 console.log(Number('230_000')); //* returns as NaN
 
+//! 175 Lecture: Working with BigInt
+
+// * BigInt is a special type of integer category that was introduced in 2020. 
+
+// * Numbers are stored in 64 bits as we know, though only 53 0s and 1s are used. The rest is for spacing, decimals, etc. 
+// * This means that numbers are limited in size. We can calculate this accordingly. 
+
+console.log(2 ** 53 - 1); //* <--- 9007199254740991 as the result. This is the biggest number that JavaScript can "safely" represent.
+console.log(Number.MAX_SAFE_INTEGER); //* this number is important enough to be stored in the Number object as MAX_SAFE_INTEGER
+console.log(2 ** 53 + 1); 
+
+// * BigInt allows us to store numbers as large as desired, in the event that it's necessary say from an API. 
+
+console.log(456412131235464561231316564654n);
+console.log(BigInt(4564121312));
+
+// ? Operations with Big Int numbers
+
+console.log(10000n + 10000n);
+console.log(5145132135214651n * 100000000n);
+
+//* it is not possible to mix Big Ints with regular numbers
+
+const huge = 546545613213546456415161n;
+const num = 23;
+
+// console.log(huge * num); // * returns error. 
+console.log(huge * BigInt(num)); 
+
+// ? Exceptions 
+console.log(20n > 15);
+console.log(20n === 20);
+console.log(typeof 20n);
+console.log(20n == 20);
+
+
+// ? Divisions
+console.log(10n / 3n);
+console.log(10 / 3);
+
+
+//! 176 Lecture: Creating Dates 
+
+// ? Create a date (four methods to create a date)
+
+// const now = new Date();
+// console.log(now);
+// console.log(new Date('Jun 04 2024 11:02:53')); //* JavaScript parses the string here based upon info within the string
+// console.log(new Date(account1.movementsDates[0])); //* the Z at the end of this string represents a universal time zone. explains why the time is different. 
+
+// console.log(new Date(2037, 10, 19, 15, 23, 5));
+
+// console.log(new Date(2037, 10, 33, 15, 23, 5)); //* JavaScript automatically corrects the date, given there is a miscalculation or input error
+
+// console.log(new Date(0));
+// console.log(new Date(3 * 24 * 60 * 60 * 1000)); //* <--- this is how to convert timestamp
+
+//? Working with dates
+
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate()); //* this is actually getDay
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+console.log(future.toISOString());
+console.log(future.getTime()); // * gets time stamp
+
+console.log(new Date(2142278580000)); 
+
+console.log(Date.now()); //* returns current time stamp
+
+future.setFullYear(2040);
+console.log(future);
+
 
