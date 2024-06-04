@@ -188,23 +188,40 @@ console.log(10 / 3);
 
 //? Working with dates
 
-const future = new Date(2037, 10, 19, 15, 23);
-console.log(future);
-console.log(future.getFullYear());
-console.log(future.getMonth());
-console.log(future.getDate()); //* this is actually getDay
-console.log(future.getHours());
-console.log(future.getMinutes());
-console.log(future.getSeconds());
-console.log(future.toISOString());
-console.log(future.getTime()); // * gets time stamp
 
-console.log(new Date(2142278580000)); 
+// console.log(future);
+// console.log(future.getFullYear());
+// console.log(future.getMonth());
+// console.log(future.getDate()); //* this is actually getDay
+// console.log(future.getHours());
+// console.log(future.getMinutes());
+// console.log(future.getSeconds());
+// console.log(future.toISOString());
+// console.log(future.getTime()); // * gets time stamp
 
-console.log(Date.now()); //* returns current time stamp
+// console.log(new Date(2142278580000)); 
 
-future.setFullYear(2040);
-console.log(future);
+// console.log(Date.now()); //* returns current time stamp
+
+// future.setFullYear(2040);
+// console.log(future);
 
 
 //! 177 Lecture: Adding Dates to Bankist App (see script file)
+
+
+//! 178 Lecture: Operations with dates
+
+//* we can do calculations with dates (obviously), i.e., calculating two dates, etc
+
+//* time stamps are going to be useful in this situation
+
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(+(future));
+
+//* function that takes in two dates, and calculates number of days passed between both dates
+
+const calcdaysPassed = (date1, date2) => Math.abs(date2 - date1) / (1000*60*60*24)
+
+const days1 = calcdaysPassed(new Date(2037, 3, 14),new Date(2037,3,4));
+console.log(days1);
