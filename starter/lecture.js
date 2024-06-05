@@ -225,3 +225,9 @@ const calcdaysPassed = (date1, date2) => Math.abs(date2 - date1) / (1000*60*60*2
 
 const days1 = calcdaysPassed(new Date(2037, 3, 14),new Date(2037,3,4));
 console.log(days1);
+
+//! 179 Lecture: Internationalization with dates (intl) - see script file 
+
+//* JavaScript developed a internationalization API for different time zones, to set a standard to allow us to simply support different languages for users around the world. 
+
+//! 180 Lecture: Internationalizing Numbers (intl) 
