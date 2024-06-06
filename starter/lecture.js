@@ -231,3 +231,19 @@ console.log(days1);
 //* JavaScript developed a internationalization API for different time zones, to set a standard to allow us to simply support different languages for users around the world. 
 
 //! 180 Lecture: Internationalizing Numbers (intl) 
+
+//? Experiments with numbers
+
+const number = 3884764.23;
+
+const options = {
+    style: 'currency',
+    unit: 'celsius',
+    currency: 'EUR',
+    useGrouping: false,
+}
+
+console.log('US: ', new Intl.NumberFormat('en-US', options).format(number));
+console.log('Germany: ', new Intl.NumberFormat('de-DE',options).format(number));
+console.log('Browser: ', new Intl.NumberFormat(navigator.language, options).format(number));
+
