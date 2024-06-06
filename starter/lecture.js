@@ -265,3 +265,7 @@ if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
 //     const newDate = new Date();
 //     console.log(newDate);
 // }, 1000)
+
+//! 182 Lecture: Implementing a countdown timer - see script file 
+
+
