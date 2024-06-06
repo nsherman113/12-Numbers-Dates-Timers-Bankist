@@ -247,3 +247,21 @@ console.log('US: ', new Intl.NumberFormat('en-US', options).format(number));
 console.log('Germany: ', new Intl.NumberFormat('de-DE',options).format(number));
 console.log('Browser: ', new Intl.NumberFormat(navigator.language, options).format(number));
 
+//! 181 Lecture: Timers: setTimeout and setInterval
+
+//* we can use set timeout to execute some code at some point in the future
+
+// ? Simulating ordering a pizza
+
+const ingredients = ['olives', 'green peppers']
+const pizzaTimer = setTimeout((ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`), 5000, ...ingredients); //* as soon as javascript hits this line of code, it counts the time in the background and registers the callback function to be called after the time has elapsed. Also called asynchronous javascript.
+
+console.log('Waiting...');
+
+if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
+
+// setInterval
+// setInterval(function(){
+//     const newDate = new Date();
+//     console.log(newDate);
+// }, 1000)
